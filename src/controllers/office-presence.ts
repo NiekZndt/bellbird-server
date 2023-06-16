@@ -8,7 +8,7 @@ const getDayPresence = async (req: Request, res: Response) => {
     }
     const date = new Date(req.body.date);
     return res.status(200).json({
-        day: data.entries.filter(entry => {
+        entries: data.entries.filter(entry => {
             return new Date(entry.date).toLocaleDateString() === date.toLocaleDateString();
         })
     });
